@@ -2,74 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Geetank IDE Design System - Mobile Coding Theme */
-
 @layer base {
   :root {
-    /* Core IDE Colors */
-    --background: 217 19% 12%;
-    --foreground: 213 27% 84%;
+    /* Base colors - IDE focused */
+    --background: 218 15% 8%;          /* Very dark blue-grey */
+    --foreground: 220 5% 95%;          /* Light text */
     
-    /* Editor Colors */
-    --editor-bg: 220 13% 18%;
-    --editor-sidebar: 217 19% 12%;
-    --editor-toolbar: 215 28% 17%;
+    /* Card colors */
+    --card: 218 15% 10%;               /* Slightly lighter than background */
+    --card-foreground: 220 5% 95%;     /* Light text on cards */
     
-    /* Accent Colors */
-    --primary: 217 92% 76%;
-    --primary-foreground: 217 19% 12%;
-    --primary-glow: 217 92% 85%;
+    /* Popover colors */
+    --popover: 218 15% 8%;             /* Same as background */
+    --popover-foreground: 220 5% 95%;  /* Light text */
     
-    --secondary: 142 76% 73%;
-    --secondary-foreground: 217 19% 12%;
+    /* Primary colors - Blue accent */
+    --primary: 210 100% 60%;           /* Bright blue */
+    --primary-foreground: 220 5% 95%;  /* Light text on primary */
+    --primary-glow: 210 100% 70%;      /* Lighter blue for glows */
     
-    --accent: 262 83% 78%;
-    --accent-foreground: 217 19% 12%;
+    /* Secondary colors */
+    --secondary: 220 10% 15%;          /* Dark grey */
+    --secondary-foreground: 220 5% 95%; /* Light text */
     
-    /* UI Elements */
-    --card: 220 13% 18%;
-    --card-foreground: 213 27% 84%;
+    /* Muted colors */
+    --muted: 220 10% 12%;              /* Very dark grey */
+    --muted-foreground: 220 5% 65%;    /* Muted text */
     
-    --border: 215 27% 32%;
-    --input: 215 28% 17%;
-    --ring: 217 92% 76%;
+    /* Accent colors */
+    --accent: 210 100% 55%;            /* Bright blue accent */
+    --accent-foreground: 220 5% 95%;   /* Light text on accent */
     
-    --muted: 215 28% 17%;
-    --muted-foreground: 215 20% 65%;
+    /* Destructive colors */
+    --destructive: 0 84% 60%;          /* Red */
+    --destructive-foreground: 220 5% 95%; /* Light text */
     
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    /* Border and input */
+    --border: 220 10% 18%;             /* Dark border */
+    --input: 220 10% 15%;              /* Dark input background */
+    --ring: 210 100% 60%;              /* Focus ring (primary) */
     
-    /* Success/Run Colors */
-    --success: 142 76% 73%;
-    --success-foreground: 217 19% 12%;
+    /* Status colors */
+    --success: 142 76% 36%;            /* Green */
+    --warning: 38 92% 50%;             /* Orange */
+    --error: 0 84% 60%;                /* Red */
     
-    /* Warning Colors */
-    --warning: 38 92% 50%;
-    --warning-foreground: 217 19% 12%;
+    /* Chart colors */
+    --chart-1: 210 100% 60%;           /* Blue */
+    --chart-2: 142 76% 36%;            /* Green */
+    --chart-3: 38 92% 50%;             /* Orange */
+    --chart-4: 271 91% 65%;            /* Purple */
+    --chart-5: 0 84% 60%;              /* Red */
     
-    /* File Colors */
-    --file-js: 45 100% 51%;
-    --file-py: 142 76% 73%;
-    --file-cpp: 217 92% 76%;
-    --file-html: 14 100% 57%;
-    --file-css: 200 98% 39%;
+    /* IDE specific colors */
+    --editor-bg: 218 15% 9%;           /* Editor background */
+    --editor-sidebar: 218 15% 6%;      /* Sidebar background */
+    --editor-toolbar: 218 15% 7%;      /* Toolbar background */
+    --editor-gutter: 220 10% 20%;      /* Line numbers */
+    --editor-selection: 210 100% 60% / 0.3; /* Selection highlight */
+    
+    /* File type colors */
+    --file-js: 48 89% 60%;             /* JavaScript - yellow */
+    --file-py: 120 100% 40%;           /* Python - green */
+    --file-cpp: 200 100% 60%;          /* C++ - light blue */
+    --file-css: 265 89% 70%;           /* CSS - purple */
+    --file-java: 14 100% 57%;          /* Java - orange */
+    --file-php: 248 53% 58%;           /* PHP - indigo */
+    --file-lua: 0 0% 40%;              /* Lua - grey */
     
     /* Gradients */
+    --gradient-bg: linear-gradient(135deg, hsl(var(--background)), hsl(218 15% 6%));
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--secondary)));
-    --gradient-bg: linear-gradient(180deg, hsl(var(--background)), hsl(var(--editor-bg)));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(220 10% 12%));
     
     /* Shadows */
+    --shadow-toolbar: 0 2px 10px -2px hsl(var(--background) / 0.5);
     --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
-    --shadow-card: 0 4px 12px hsl(217 19% 12% / 0.4);
-    --shadow-toolbar: 0 2px 8px hsl(217 19% 12% / 0.6);
+    --shadow-card: 0 4px 12px -2px hsl(var(--background) / 0.8);
     
-    /* Transitions */
+    /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-fast: all 0.15s ease-out;
-    
-    --radius: 0.5rem;
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -77,8 +90,52 @@
   * {
     @apply border-border;
   }
-
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gradient-bg text-foreground font-mono antialiased;
+  }
+  
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+  
+  /* CodeMirror customizations */
+  .cm-editor {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace !important;
+  }
+  
+  .cm-content {
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+  
+  /* Function/keyword italics */
+  .cm-keyword,
+  .cm-def,
+  .cm-functionName,
+  .cm-className {
+    font-style: italic !important;
+  }
+  
+  /* Selection colors */
+  ::selection {
+    background: hsl(var(--primary) / 0.3);
+  }
+  
+  .cm-selectionBackground {
+    background: hsl(var(--primary) / 0.3) !important;
   }
 }
